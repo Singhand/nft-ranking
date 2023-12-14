@@ -14,12 +14,12 @@ ${reset};
 }
 
 body{
-  background-color: #000;
+  background-color: #0d0618;
   color:#fff;
 }
 `;
 
-const Wrapper = styled.div`
+const Container = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -30,7 +30,7 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Wrapper>
+      <Container>
         <GlobalStyles></GlobalStyles>
         <BrowserRouter>
           <Routes>
@@ -38,7 +38,7 @@ function App() {
             <Route path="/detail" element={<Detail></Detail>}></Route>
           </Routes>
         </BrowserRouter>
-      </Wrapper>
+      </Container>
     </QueryClientProvider>
   );
 }
