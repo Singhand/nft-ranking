@@ -18,3 +18,17 @@ export const Button = styled.div`
     height: 24px;
   }
 `;
+
+export const Fab = styled(Button)`
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+
+  @media screen and (max-width: 430px) {
+    right: 20px;
+    bottom: 20px;
+  }
+`;

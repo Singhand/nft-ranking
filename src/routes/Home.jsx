@@ -1,27 +1,12 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Fab = styled.div`
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background-color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 100px;
-`;
+import { Fab } from "../components/Button";
+import { Wrapper } from "../components/Wrapper";
+import { MainHeader } from "../components/Header";
 
 export default function Home() {
   const [showScrollTopButton, setShowScrollTopButton] = useState(false);
 
   useEffect(() => {
-    console.log("useeff");
     const checkScrollTop = () => {
       if (!showScrollTopButton && window.scrollY > 500) {
         setShowScrollTopButton(true);
@@ -38,10 +23,24 @@ export default function Home() {
 
   return (
     <Wrapper>
+      <MainHeader></MainHeader>
       {showScrollTopButton && (
-        <Fab
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        ></Fab>
+        <Fab onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.5 15.75l7.5-7.5 7.5 7.5"
+            />
+          </svg>
+        </Fab>
       )}
     </Wrapper>
   );
