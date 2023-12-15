@@ -5,7 +5,7 @@ import reset from "styled-reset";
 import Home from "./routes/Home";
 import "./App.css";
 import Detail from "./routes/Detail";
-import { backgroundColor } from "./style/common";
+import { backgroundColor, textColor } from "./style/common";
 
 const GlobalStyles = createGlobalStyle`
 ${reset};
@@ -16,7 +16,7 @@ ${reset};
 
 body{
   ${backgroundColor}
-  color:#fff;
+  ${textColor}
 }
 `;
 
