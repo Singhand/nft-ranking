@@ -45,7 +45,7 @@ export const ToggleChip = styled(Button)`
   padding: 10px 20px;
 
   ${(props) => {
-    if (props.select) {
+    if (props.$select) {
       return `
   color: black;
   background-color: white;`;
