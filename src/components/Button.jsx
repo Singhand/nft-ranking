@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {
+  backgroundColor,
   buttonBorderRadius,
   buttonColor,
   hoverTss,
@@ -37,4 +38,19 @@ export const Fab = styled(Button)`
     right: 20px;
     bottom: 20px;
   }
+`;
+
+export const ToggleChip = styled(Button)`
+  border-radius: 100px;
+  padding: 10px 20px;
+
+  ${(props) => {
+    if (props.select) {
+      return `
+  color: black;
+  background-color: white;`;
+    } else {
+      return `${backgroundColor} border: 1.5px solid #797979;`;
+    }
+  }}
 `;
