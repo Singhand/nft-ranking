@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   ${backgroundColor}
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 
   @media screen and (max-width: 430px) {
     width: 100%;
