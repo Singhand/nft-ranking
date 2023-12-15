@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { hoverTss, imageBorderRadius } from "../style/common";
+import { buttonColor, hoverTss, imageBorderRadius } from "../style/common";
 import Content from "./Content";
 
 const IMG_SIZE = "200px";
@@ -16,6 +16,7 @@ const Image = styled.img`
   width: ${IMG_SIZE};
   height: ${IMG_SIZE};
   object-fit: cover;
+  ${buttonColor}
   ${imageBorderRadius}
   cursor: pointer;
 
