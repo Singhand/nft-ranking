@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import { buttonBorderRadius, buttonColor, textColor } from "../style/common";
 import { Button } from "./Button";
 
 const HEIGHT = "50px";
 
 const Title = styled.div`
-  ${textColor}
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
