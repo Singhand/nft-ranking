@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { imageBorderRadius } from "../style/common";
+import { hoverTss, imageBorderRadius } from "../style/common";
 import Content from "./Content";
 
 const IMG_SIZE = "200px";
@@ -19,6 +19,7 @@ const Image = styled.img`
   ${imageBorderRadius}
   cursor: pointer;
 
+  ${hoverTss}
   &:hover {
     opacity: 0.8;
   }

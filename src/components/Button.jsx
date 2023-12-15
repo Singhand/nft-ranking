@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { buttonBorderRadius, buttonColor, textColor } from "../style/common";
+import {
+  buttonBorderRadius,
+  buttonColor,
+  hoverTss,
+  textColor,
+} from "../style/common";
 
 export const Button = styled.div`
   ${buttonColor}
@@ -9,6 +14,7 @@ export const Button = styled.div`
   justify-content: center;
   cursor: pointer;
 
+  ${hoverTss}
   &:hover {
     opacity: 0.8;
   }

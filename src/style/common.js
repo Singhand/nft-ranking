@@ -27,3 +27,7 @@ export const buttonBorderRadius = css`
 export const imageBorderRadius = css`
   border-radius: 20px;
 `;
+
+export const hoverTss = css`
+  transition: 0.3s;
+`;
