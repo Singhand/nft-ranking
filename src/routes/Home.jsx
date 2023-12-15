@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Fab } from "../components/Button";
-import { Wrapper } from "../components/Wrapper";
 import { MainHeader } from "../components/Header";
+import HotPeople from "../components/HotPeople";
+import { Wrapper } from "../components/Wrapper";
+import Rank from "../components/Rank";
 
 export default function Home() {
   const [showScrollTopButton, setShowScrollTopButton] = useState(false);
@@ -24,6 +26,9 @@ export default function Home() {
   return (
     <Wrapper>
       <MainHeader></MainHeader>
+      <HotPeople></HotPeople>
+      <Rank></Rank>
+
       {showScrollTopButton && (
         <Fab onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
           <svg
