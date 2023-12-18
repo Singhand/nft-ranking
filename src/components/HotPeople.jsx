@@ -41,10 +41,29 @@ const ElementBox = styled.div`
 `;
 
 export default function HotPeople() {
+  const data = [
+    {
+      url: "https://i.pravatar.cc/200?img=10",
+      name: "Ketty",
+      id: 100,
+    },
+    {
+      url: "https://i.pravatar.cc/200?img=24",
+      name: "Camila",
+      id: 101,
+    },
+    {
+      url: "https://i.pravatar.cc/200?img=57",
+      name: "Nathon",
+      id: 102,
+    },
+  ];
   return (
-    <Content title={"HOT"}>
+    <Content title={"TRENDING"}>
       <RowCtn>
-        <Element></Element>
+        {data.map((item) => (
+          <Element {...item} key={item.id}></Element>
+        ))}
       </RowCtn>
     </Content>
   );
@@ -53,8 +72,8 @@ export default function HotPeople() {
 function Element({ url, name, id }) {
   return (
     <ElementBox>
-      <Image src="https://picsum.photos/200"></Image>
-      <Name>Camila</Name>
+      <Image src={url}></Image>
+      <Name>{name}</Name>
     </ElementBox>
   );
 }
