@@ -59,7 +59,7 @@ export default function HotPeople() {
     },
   ];
   return (
-    <Content title={"TRENDING"}>
+    <Content title={"RISING"}>
       <RowCtn>
         {data.map((item) => (
           <Element {...item} key={item.id}></Element>

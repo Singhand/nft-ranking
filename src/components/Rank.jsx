@@ -6,8 +6,8 @@ import { ToggleChip } from "./Button";
 import RankItem from "./RankItem";
 import { ClipLoader } from "react-spinners";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { Button } from "@mui/material";
 import { fetchRanks } from "../api/rank";
+import { useNavigate } from "react-router-dom";
 
 const ColCtn = styled.div`
   display: flex;
@@ -28,12 +28,14 @@ const LoadingBox = styled.div`
 `;
 
 export default function Rank() {
+  const nav = useNavigate();
+
   // 랭킹 검색 조건
   const [keyWord, setKeyWord] = useState("");
   const [tag, setTag] = useState("All");
   const [tagSel, setTagSel] = useState(0);
 
-  const tags = ["All", "Youtuber", "Singer"];
+  const tags = ["All", "Influencer", "Singer", "Model", "Dancer"];
 
   const {
     data,
@@ -102,7 +104,13 @@ export default function Rank() {
           data.pages.map((page, index) => (
             <React.Fragment key={index}>
               {page.map((item, i) => (
-                <RankItem {...item} key={item.id}></RankItem>
+                <RankItem
+                  {...item}
+                  key={item.id}
+                  click={() => {
+                    nav("/detail");
+                  }}
+                ></RankItem>
               ))}
             </React.Fragment>
           ))}

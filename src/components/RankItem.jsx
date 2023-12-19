@@ -51,9 +51,9 @@ const Price = styled.div`
   font-size: 18px;
 `;
 
-export default function RankItem({ url, name, tags, price, id }) {
+export default function RankItem({ url, name, tags, price, id, click }) {
   return (
-    <Ctn>
+    <Ctn onClick={click}>
       <Img src={url}></Img>
       <TextBox>
         <Name>{name}</Name>
