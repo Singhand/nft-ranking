@@ -24,6 +24,10 @@ const HeaderCtn = styled.div`
   justify-content: center;
 `;
 
+const DetailHeaderCtn = styled(HeaderCtn)`
+  z-index: 1;
+`;
+
 const IconBtnRight = styled(IconBtn)`
   position: absolute;
   top: 0;
@@ -62,7 +66,7 @@ export function MainHeader({ click }) {
 
 export function DetailHeader({ click }) {
   return (
-    <HeaderCtn>
+    <DetailHeaderCtn>
       <IconBtnLeft onClick={click}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +83,7 @@ export function DetailHeader({ click }) {
           />
         </svg>
       </IconBtnLeft>
-    </HeaderCtn>
+    </DetailHeaderCtn>
   );
 }
 

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Fab } from "../components/Button";
 import { MainHeader } from "../components/Header";
 import HotPeople from "../components/HotPeople";
-import { Wrapper } from "../components/Wrapper";
 import Rank from "../components/Rank";
+import { Wrapper } from "../components/Wrapper";
 
 export default function Home() {
   const [showScrollTopButton, setShowScrollTopButton] = useState(false);
