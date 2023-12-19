@@ -8,6 +8,14 @@ export const textColor = css`
   color: #fff;
 `;
 
+export const neutralTextColor = css`
+  color: #888;
+`;
+
+export const secondaryTextColor = css`
+  color: #94a9f5;
+`;
+
 export const buttonColor = css`
   background-color: #1f1f1f;
 `;
@@ -16,8 +24,8 @@ export const buttonHoverColor = css`
   background-color: #333;
 `;
 
-export const neutralTextColor = css`
-  color: #888;
+export const secondaryButtonColor = css`
+  background-color: #94a9f5;
 `;
 
 export const buttonBorderRadius = css`
