@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 
+export const secondaryColor = "#94a9f5";
+
 export const backgroundColor = css`
   background-color: #070707;
 `;
@@ -13,7 +15,7 @@ export const neutralTextColor = css`
 `;
 
 export const secondaryTextColor = css`
-  color: #94a9f5;
+  color: ${secondaryColor};
 `;
 
 export const buttonColor = css`
@@ -25,7 +27,7 @@ export const buttonHoverColor = css`
 `;
 
 export const secondaryButtonColor = css`
-  background-color: #94a9f5;
+  background-color: ${secondaryColor};
 `;
 
 export const buttonBorderRadius = css`
