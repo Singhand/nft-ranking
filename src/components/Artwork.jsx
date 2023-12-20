@@ -1,9 +1,25 @@
 import React, { useMemo, useState } from "react";
 import styled from "styled-components";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { imageBorderRadius, secondaryTextColor } from "../style/common";
+import {
+  imageBorderRadius,
+  secondaryColor,
+  secondaryTextColor,
+} from "../style/common";
+import { MySlider } from "./MySlider";
+import {
+  AreaChart,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Area,
+  CartesianAxis,
+} from "recharts";
+import { useQuery } from "@tanstack/react-query";
+import { fetchDetail } from "../api/detail";
+import { BottomFixedButtonCtn, Button, SecondaryButton } from "./Button";
 
 const Wrap = styled.div`
   display: flex;
@@ -16,45 +32,6 @@ const Wrap = styled.div`
   width: 100%;
   height: 100%;
   max-height: 100%;
-`;
-
-const MySlider = styled(Slider)`
-  width: 100%;
-  aspect-ratio: 1;
-
-  & .slick-prev,
-  .slick-next {
-    display: none !important;
-  }
-
-  & .slick-dots {
-    position: static;
-    margin-top: 10px;
-  }
-
-  & .slick-dots li {
-    width: 10px;
-  }
-
-  & .slick-dots li.slick-active {
-    width: 30px;
-  }
-
-  & .slick-dots button::before {
-    content: none;
-  }
-
-  & .slick-dots button {
-    background-color: gray;
-    width: 10px;
-    border-radius: 10px;
-    height: 5px;
-  }
-
-  & .slick-dots .slick-active button {
-    width: 30px;
-    background-color: white;
-  }
 `;
 
 const SlideImg = styled.img`
@@ -72,6 +49,18 @@ const ArtWorkInfo = styled.div`
   margin-top: 40px;
   grid-template-columns: 2fr 1fr;
   gap: 10px;
+
+  @keyframes popup {
+    0% {
+      opacity: 0;
+      transform: translateY(50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  animation: popup 0.7s ease;
 `;
 
 const AwTitle = styled.div`
@@ -94,6 +83,20 @@ const AwCreator = styled.div`
 const ChartCtn = styled.div`
   width: 100%;
   padding: 0 ${VerticalPadding};
+  margin-top: 30px;
+  padding-bottom: 70px;
+
+  & .recharts-wrapper {
+    width: 100% !important;
+  }
+`;
+
+const Awbfc = styled(BottomFixedButtonCtn)`
+  padding: 0 ${VerticalPadding};
+
+  & > div {
+    flex: 1;
+  }
 `;
 
 export default function Artwork() {
@@ -111,21 +114,67 @@ export default function Artwork() {
     []
   );
 
+  const { isLoading, isFetching, data, isError } = useQuery({
+    queryKey: ["detail", 1],
+    queryFn: () => fetchDetail(1),
+    staleTime: 30000,
+  });
+
+  console.log(data);
+
   return (
     <Wrap>
       <MySlider {...settings}>
-        <SlideImg src="https://images.unsplash.com/photo-1642611012881-a95922e7e373?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></SlideImg>
-        <SlideImg src="https://images.unsplash.com/photo-1640973063709-4160b665d787?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></SlideImg>
-        <SlideImg src="https://images.unsplash.com/photo-1649255917534-5ca5c56fca06?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></SlideImg>
+        {data &&
+          data.map((item) => (
+            <SlideImg src={item.url} key={item.id}></SlideImg>
+          ))}
       </MySlider>
 
-      <ArtWorkInfo>
-        <AwTitle>Matilda #1</AwTitle>
-        <AwPrice>0.078</AwPrice>
-        <AwCreator>@Matilda</AwCreator>
-      </ArtWorkInfo>
+      {data && (
+        <ArtWorkInfo>
+          <AwTitle>{data[activeSlide].title}</AwTitle>
+          <AwPrice>₩{data[activeSlide].price.toLocaleString()}</AwPrice>
+          <AwCreator>@Matilda</AwCreator>
+        </ArtWorkInfo>
+      )}
 
-      <ChartCtn></ChartCtn>
+      {!isFetching && data && (
+        <ChartCtn>
+          <AreaChart
+            width={400}
+            height={250}
+            data={data[activeSlide].chart}
+            margin={{ top: 10, right: 0, left: 0, bottom: 0 }}
+          >
+            <defs>
+              <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                <stop
+                  offset="5%"
+                  stopColor={secondaryColor}
+                  stopOpacity={0.8}
+                />
+                <stop offset="95%" stopColor={secondaryColor} stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <XAxis dataKey="name" />
+            <YAxis />
+            <CartesianGrid strokeDasharray="3 3" vertical={false} />
+            <Tooltip />
+            <Area
+              type="monotone"
+              dataKey="Price"
+              stroke={secondaryColor}
+              fillOpacity={1}
+              fill="url(#colorUv)"
+            />
+          </AreaChart>
+        </ChartCtn>
+      )}
+      <Awbfc>
+        <Button>View All</Button>
+        <SecondaryButton>Make Bid</SecondaryButton>
+      </Awbfc>
     </Wrap>
   );
 }
