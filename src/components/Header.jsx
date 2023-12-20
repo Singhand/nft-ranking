@@ -13,6 +13,7 @@ const Title = styled.div`
 const IconBtn = styled(Button)`
   width: ${HEIGHT};
   height: ${HEIGHT};
+  padding: 0;
 `;
 
 const HeaderCtn = styled.div`
