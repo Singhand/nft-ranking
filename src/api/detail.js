@@ -63,14 +63,14 @@ export const fetchDetail = (key) => {
     {
       url: "https://images.unsplash.com/photo-1640973063709-4160b665d787?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "Matilda #2",
-      price: 3490,
+      price: 5310,
       id: 102,
       chart: chart1,
     },
     {
       url: "https://images.unsplash.com/photo-1649255917534-5ca5c56fca06?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "Matilda #3",
-      price: 3490,
+      price: 3305,
       id: 103,
       chart: chart2,
     },
