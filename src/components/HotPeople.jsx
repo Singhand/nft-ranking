@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { buttonColor, hoverTss, imageBorderRadius } from "../style/common";
 import Content from "./Content";
+import { useNavigate } from "react-router-dom";
 
 const IMG_SIZE = "200px";
 
@@ -58,8 +59,9 @@ export default function HotPeople() {
       id: 102,
     },
   ];
+
   return (
-    <Content title={"RISING"}>
+    <Content title={"HOT"}>
       <RowCtn>
         {data.map((item) => (
           <Element {...item} key={item.id}></Element>
@@ -70,9 +72,15 @@ export default function HotPeople() {
 }
 
 function Element({ url, name, id }) {
+  const nav = useNavigate();
   return (
     <ElementBox>
-      <Image src={url}></Image>
+      <Image
+        src={url}
+        onClick={() => {
+          nav("/detail");
+        }}
+      ></Image>
       <Name>{name}</Name>
     </ElementBox>
   );

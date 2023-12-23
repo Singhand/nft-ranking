@@ -163,9 +163,14 @@ export function MainHeader({ click }) {
 }
 
 export function DetailHeader({ click }) {
+  const nav = useNavigate();
   return (
     <DetailHeaderCtn>
-      <IconBtnLeft onClick={click}>
+      <IconBtnLeft
+        onClick={() => {
+          nav(-1);
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -187,10 +192,15 @@ export function DetailHeader({ click }) {
 
 export function MpHeader({ click }) {
   // my page header
+  const nav = useNavigate();
   return (
     <HeaderCtn>
       <Title>MY</Title>
-      <IconBtnLeft onClick={click}>
+      <IconBtnLeft
+        onClick={() => {
+          nav(-1);
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

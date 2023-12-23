@@ -1,26 +1,19 @@
 import React, { useRef, useCallback, useEffect, useState } from "react";
 import Content from "./Content";
 import styled from "styled-components";
-import SearchBox from "./SearchBox";
-import { ToggleChip } from "./Button";
+import { ChipCtn, ToggleChip } from "./Button";
 import RankItem from "./RankItem";
 import { ClipLoader } from "react-spinners";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { fetchRanks } from "../api/rank";
 import { useNavigate } from "react-router-dom";
+import InputBox from "./InputBox";
 
 const ColCtn = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: 20px;
-`;
-
-const ChipCtn = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  gap: 10px;
 `;
 
 const LoadingBox = styled.div`
@@ -85,7 +78,7 @@ export default function Rank() {
   return (
     <Content title={"RANK"}>
       <ColCtn>
-        <SearchBox></SearchBox>
+        <InputBox searchIcon={true} placeholder={"Search"}></InputBox>
         <ChipCtn>
           {tags.map((name, i) => (
             <ToggleChip

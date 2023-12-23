@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import Artwork from "../components/Artwork";
 import { DetailHeader } from "../components/Header";
 import { Wrapper } from "../components/Wrapper";
-import Artwork from "../components/Artwork";
-
-const Title = styled.div`
-  transform: rotate(0.03deg);
-`;
 
 export default function Detail() {
-  const nav = useNavigate();
-
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -20,11 +13,7 @@ export default function Detail() {
 
   return (
     <Wrapper>
-      <DetailHeader
-        click={() => {
-          nav(-1);
-        }}
-      ></DetailHeader>
+      <DetailHeader></DetailHeader>
       <Artwork></Artwork>
     </Wrapper>
   );

@@ -74,3 +74,10 @@ export const ToggleChip = styled(Button)`
     }
   }}
 `;
+
+export const ChipCtn = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+`;
