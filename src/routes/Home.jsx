@@ -4,6 +4,7 @@ import { MainHeader } from "../components/Header";
 import HotPeople from "../components/HotPeople";
 import Rank from "../components/Rank";
 import { Wrapper } from "../components/Wrapper";
+import { Navigate } from "react-router-dom";
 
 export default function Home() {
   const [showScrollTopButton, setShowScrollTopButton] = useState(false);
@@ -22,6 +23,11 @@ export default function Home() {
       window.removeEventListener("scroll", checkScrollTop);
     };
   }, [showScrollTopButton]);
+
+  if (!window.localStorage.getItem("visited")) {
+    window.localStorage.setItem("visited", "true");
+    return <Navigate to="/intro"></Navigate>;
+  }
 
   return (
     <Wrapper>
