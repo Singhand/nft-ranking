@@ -5,7 +5,7 @@ import {
   buttonColor,
   neutralTextColor,
   textColor,
-} from "../style/common";
+} from "../../style/common";
 
 const SearchBoxContainer = styled.div`
   ${buttonColor}

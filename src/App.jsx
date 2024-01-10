@@ -1,13 +1,10 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import "./App.css";
-import Detail from "./routes/Detail";
-import Home from "./routes/Home";
-import { backgroundColor, textColor } from "./style/common";
-import { AnimatePresence } from "framer-motion";
 import RoutesWithAnimation from "./components/RoutesWithAnimation";
+import { backgroundColor, textColor } from "./style/common";
 
 const GlobalStyles = createGlobalStyle`
 ${reset};

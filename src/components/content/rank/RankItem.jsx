@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { buttonColor, hoverTss, neutralTextColor } from "../style/common";
+import { buttonColor, hoverTss, neutralTextColor } from "../../../style/common";
 
 const IMG_SIZE = "50px";
 

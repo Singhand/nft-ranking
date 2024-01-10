@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Fab } from "../components/Button";
-import { MainHeader } from "../components/Header";
+import { MainHeader } from "../components/header/Header";
 import HotPeople from "../components/HotPeople";
 import Rank from "../components/Rank";
 import { Wrapper } from "../components/Wrapper";

@@ -7,7 +7,7 @@ import {
   secondaryButtonColor,
   secondaryTextColor,
   textColor,
-} from "../style/common";
+} from "../../style/common";
 
 export const Button = styled.div`
   ${buttonColor}

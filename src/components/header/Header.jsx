@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Button } from "./Button";
+import { Button } from "../common/Button";
 import { useNavigate } from "react-router-dom";
-import { buttonColor, buttonHoverColor, hoverTss } from "../style/common";
+import { buttonColor, buttonHoverColor, hoverTss } from "../../style/common";
 import { useState } from "react";
 
 const HEIGHT = "50px";

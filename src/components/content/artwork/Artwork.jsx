@@ -1,25 +1,28 @@
+import { useQuery } from "@tanstack/react-query";
 import React, { useMemo, useState } from "react";
-import styled from "styled-components";
-import "slick-carousel/slick/slick.css";
+import {
+  Area,
+  AreaChart,
+  CartesianGrid,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import styled from "styled-components";
+import { fetchDetail } from "../../../api/detail";
 import {
   imageBorderRadius,
   secondaryColor,
   secondaryTextColor,
-} from "../style/common";
+} from "../../../style/common";
 import { MySlider } from "./MySlider";
 import {
-  AreaChart,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Area,
-  CartesianAxis,
-} from "recharts";
-import { useQuery } from "@tanstack/react-query";
-import { fetchDetail } from "../api/detail";
-import { BottomFixedButtonCtn, Button, SecondaryButton } from "./Button";
+  BottomFixedButtonCtn,
+  Button,
+  SecondaryButton,
+} from "../../common/Button";
 
 const Wrap = styled.div`
   display: flex;

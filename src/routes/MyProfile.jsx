@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { MpHeader } from "../components/Header";
+import { MpHeader } from "../components/header/Header";
 import InputBox from "../components/InputBox";
 import LabeledContent from "../components/LabeledContent";
 import { Wrapper } from "../components/Wrapper";
-import ProfileTags from "../components/ProfileTags";
-import ProfileArtwork from "../components/ProfileArtwork";
+import ProfileTags from "../components/content/profile/ProfileTags";
+import ProfileArtwork from "../components/content/profile/ProfileArtwork";
 
 const InfoCtn = styled.div`
   display: flex;

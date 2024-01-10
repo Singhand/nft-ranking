@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import Artwork from "../components/Artwork";
-import { DetailHeader } from "../components/Header";
-import { Wrapper } from "../components/Wrapper";
+import { Wrapper } from "../components/common/Wrapper";
+import { DetailHeader } from "../components/header/Header";
 
 export default function Detail() {
   useEffect(() => {

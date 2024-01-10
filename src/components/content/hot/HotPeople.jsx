@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { buttonColor, hoverTss, imageBorderRadius } from "../style/common";
+import {
+  buttonColor,
+  hoverTss,
+  imageBorderRadius,
+} from "../../../style/common";
 import Content from "./Content";
 import { useNavigate } from "react-router-dom";
 
