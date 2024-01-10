@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { MpHeader } from "../components/header/Header";
-import InputBox from "../components/InputBox";
-import LabeledContent from "../components/LabeledContent";
-import { Wrapper } from "../components/Wrapper";
+import InputBox from "../components/common/InputBox";
+import LabeledContent from "../components/common/LabeledContent";
+import { Wrapper } from "../components/common/Wrapper";
 import ProfileTags from "../components/content/profile/ProfileTags";
 import ProfileArtwork from "../components/content/profile/ProfileArtwork";
 

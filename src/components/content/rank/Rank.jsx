@@ -1,13 +1,13 @@
 import React, { useRef, useCallback, useEffect, useState } from "react";
-import Content from "./Content";
+import Content from "../../common/Content";
 import styled from "styled-components";
-import { ChipCtn, ToggleChip } from "./Button";
+import { ChipCtn, ToggleChip } from "../../common/Button";
 import RankItem from "./RankItem";
 import { ClipLoader } from "react-spinners";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { fetchRanks } from "../../../api/rank";
 import { useNavigate } from "react-router-dom";
-import InputBox from "./InputBox";
+import InputBox from "../../common/InputBox";
 
 const ColCtn = styled.div`
   display: flex;

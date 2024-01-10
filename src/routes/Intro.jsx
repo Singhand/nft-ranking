@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React from "react";
-import { Wrapper } from "../components/Wrapper";
-import { SecondaryButton } from "../components/Button";
+import { Wrapper } from "../components/common/Wrapper";
+import { SecondaryButton } from "../components/common/Button";
 import { useNavigate } from "react-router-dom";
 
 const BlackGradient = styled.div`

@@ -5,7 +5,7 @@ import {
   hoverTss,
   imageBorderRadius,
 } from "../../../style/common";
-import Content from "./Content";
+import Content from "../../common/Content";
 import { useNavigate } from "react-router-dom";
 
 const IMG_SIZE = "200px";

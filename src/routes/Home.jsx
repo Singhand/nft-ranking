@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Fab } from "../components/Button";
+import { Fab } from "../components/common/Button";
 import { MainHeader } from "../components/header/Header";
-import HotPeople from "../components/HotPeople";
-import Rank from "../components/Rank";
-import { Wrapper } from "../components/Wrapper";
+import HotPeople from "../components/content/hot/HotPeople";
+import Rank from "../components/content/rank/Rank";
+import { Wrapper } from "../components/common/Wrapper";
 import { Navigate } from "react-router-dom";
 
 export default function Home() {

@@ -17,7 +17,7 @@ import {
   secondaryColor,
   secondaryTextColor,
 } from "../../../style/common";
-import { MySlider } from "./MySlider";
+import { MySlider } from "../../common/MySlider";
 import {
   BottomFixedButtonCtn,
   Button,

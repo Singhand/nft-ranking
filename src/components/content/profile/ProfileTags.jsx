@@ -1,6 +1,6 @@
 import React from "react";
-import LabeledContent from "./LabeledContent";
-import { ChipCtn, ToggleChip } from "./Button";
+import LabeledContent from "../../common/LabeledContent";
+import { ChipCtn, ToggleChip } from "../../common/Button";
 import { useState } from "react";
 
 export default function ProfileTags() {

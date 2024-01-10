@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Artwork from "../components/Artwork";
+import Artwork from "../components/content/artwork/Artwork";
 import { Wrapper } from "../components/common/Wrapper";
 import { DetailHeader } from "../components/header/Header";
 
