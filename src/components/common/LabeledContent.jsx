@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;

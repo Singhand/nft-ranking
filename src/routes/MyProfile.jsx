@@ -7,7 +7,7 @@ import { Wrapper } from "../components/common/Wrapper";
 import ProfileTags from "../components/content/profile/ProfileTags";
 import ProfileArtwork from "../components/content/profile/ProfileArtwork";
 
-const InfoCtn = styled.div`
+const InfoCtn = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;

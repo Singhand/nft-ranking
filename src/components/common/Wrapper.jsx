@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { backgroundColor } from "../../style/common";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.main`
   display: flex;
   position: relative;
   width: 430px;

@@ -19,7 +19,7 @@ const IconBtn = styled(Button)`
   padding: 0;
 `;
 
-const HeaderCtn = styled.div`
+const HeaderCtn = styled.header`
   width: 100%;
   height: ${HEIGHT};
   display: flex;

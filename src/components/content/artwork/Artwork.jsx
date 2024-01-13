@@ -24,7 +24,7 @@ import {
   SecondaryButton,
 } from "../../common/Button";
 
-const Wrap = styled.div`
+const Wrap = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
