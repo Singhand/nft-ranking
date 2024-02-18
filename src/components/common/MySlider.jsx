@@ -5,6 +5,10 @@ export const MySlider = styled(Slider)`
   width: 100%;
   aspect-ratio: 1;
 
+  @media screen and (max-width: 400px) {
+    width: 100%;
+  }
+
   & .slick-prev,
   .slick-next {
     display: none !important;

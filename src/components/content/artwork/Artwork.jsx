@@ -38,7 +38,8 @@ const Wrap = styled.section`
 `;
 
 const SlideImg = styled.img`
-  aspect-ratio: 1;
+  /* aspect-ratio: 1; */
+  height: 50vh;
   object-fit: cover;
   ${imageBorderRadius}
 `;
