@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import styled from "styled-components";
 import {
   buttonBorderRadius,
@@ -44,16 +44,23 @@ const IconContainer = styled.div`
 `;
 
 const InputBox = ({ searchIcon, placeholder }) => {
-  const [inputValue, setInputValue] = useState("");
+  const [clear, setClear] = useState(false);
   const inputRef = useRef(null);
 
   const handleInputChange = useCallback((event) => {
-    setInputValue(event.target.value);
+    if (event.target.value) {
+      setClear(true);
+    } else {
+      setClear(false);
+    }
   }, []);
 
   const clearInput = useCallback(() => {
-    setInputValue("");
+    if (inputRef.current) {
+      inputRef.current.value = "";
+    }
     inputRef.current.focus();
+    setClear(false);
   }, []);
 
   const search = useCallback(
@@ -89,12 +96,11 @@ const InputBox = ({ searchIcon, placeholder }) => {
           placeholder={placeholder}
           type="text"
           ref={inputRef}
-          value={inputValue}
           onChange={handleInputChange}
         />
       </Form>
 
-      {inputValue && (
+      {clear && (
         <IconContainer className="clear" onClick={clearInput}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
